@@ -24,11 +24,11 @@ def cmdvel_to_pwm(v, w, v_max=1.0, w_max=1.0):
     """
     # --- Motor ---
     pwm_motor = 0.15 + (v / v_max) * 0.05
-    pwm_motor = max(0.146, min(0.156, pwm_motor))  # limita
+    pwm_motor = max(0.146, min(0.15505, pwm_motor))  # limita
 
     # --- Servo ---
     pwm_servo = 0.16 + (w / w_max) * 0.05
-    pwm_servo = max(0.10, min(0.25, pwm_servo))  # limita
+    pwm_servo = max(0.05, min(0.25, pwm_servo))  # limita
 
     # Converte para escala PCA9685
     duty_motor = int(65535 * pwm_motor)
