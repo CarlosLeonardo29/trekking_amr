@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find trekking_2025)/urdf/common_properties.urdf.xacro" />
+
+  <link name="base_link">
+    <xacro:cuboid_inertia mass="1.0" x="0.1" y="0.1" z="0.1" />
+  </link>
+
+  <joint name="joint_base_link_chassis" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <child link="link_chassis" />
+    <parent link="base_link" />
+  </joint>
+
+  <link name="link_chassis">
+
+    <visual name="chassis_visual">
+      <origin rpy="1.57 0 1.57" xyz="0.033 0.025 -0.04" />
+      <geometry>
+        <mesh filename="package://trekking_2025/meshes/Chassi_RC.obj"
+          scale="0.042 0.042 0.042" />
+      </geometry>
+      <material name="white">
+        <lighting>true</lighting>
+        <cast_shadows>true</cast_shadows>
+        <receive_shadows>true</receive_shadows>
+        <color rgba="0.9 0.9 0.9 1.0" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.15" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.35 0.22" />
+      </geometry>
+    </collision>
+
+    <xacro:inertial_cuboid_with_pose mass="500.0" x="0.5" y="0.35" z="0.22">
+      <origin xyz="0 0 0.11" rpy="0 0 0" />
+    </xacro:inertial_cuboid_with_pose>
+  </link>
+
+  <link name="rear_left_wheel">
+
+    <xacro:inertial_cylinder mass="11.0" radius="0.06" length="0.07" />
+
+    <visual name="rear_left_wheel_visual">
+      <geometry>
+        <cylinder radius="0.06" length="0.07" />
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <friction>
+        <ode>
+          <mu>1.1</mu>
+          <mu2>1.1</mu2>
+        </ode>
+      </friction>
+    </collision>
+
+  </link>
+
+
+  <joint type="revolute" name="rear_left_wheel_joint">
+    <origin rpy="1.56 0 0" xyz="-0.25 0.175 0.06" />
+    <child link="rear_left_wheel" />
+    <parent link="link_chassis" />
+    <axis rpy="0 0 0" xyz="0 0 1" />
+    <limit lower="-1.79769e+308" upper="1.79769e+308"
+      effort="100000" velocity="1000" />
+  </joint>
+
+
+  <!-- Rear Right Wheel -->
+  <link name="rear_right_wheel">
+    <!-- <inertial>
+      <mass value="11.0" />
+      <inertia ixx="0.58" ixy="0.0" iyy="0.33" ixz="0.0" iyz="0.0" izz="0.33" />
+    </inertial> -->
+
+    <xacro:inertial_cylinder mass="11.0" radius="0.06" length="0.07" />
+
+
+    <visual name="rear_right_wheel_visual">
+      <geometry>
+        <cylinder radius="0.06" length="0.07" />
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <friction>
+        <ode>
+          <mu>1.1</mu>
+          <mu2>1.1</mu2>
+        </ode>
+      </friction>
+    </collision>
+  </link>
+
+  <joint type="revolute" name="rear_right_wheel_joint">
+    <origin rpy="1.56 0 0" xyz="-0.25 -0.175 0.06" />
+    <child link="rear_right_wheel" />
+    <parent link="link_chassis" />
+    <axis rpy="0 0 0" xyz="0 0 1" />
+    <limit lower="-1.79769e+308" upper="1.79769e+308"
+      effort="100000" velocity="1000" />
+  </joint>
+
+
+  <!-- Front Left Wheel -->
+  <link name="front_left_wheel">
+
+    <!-- <inertial>
+      <mass value="11.0" />
+      <inertia ixx="0.58" ixy="0.0" iyy="0.33" ixz="0.0" iyz="0.0" izz="0.33" />
+    </inertial> -->
+
+    <xacro:inertial_cylinder mass="11.0" radius="0.06" length="0.07" />
+
+
+    <visual name="front_left_wheel_visual">
+      <geometry>
+        <cylinder radius="0.06" length="0.07" />
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <friction>
+        <ode>
+          <mu>1.1</mu>
+          <mu2>1.1</mu2>
+        </ode>
+      </friction>
+    </collision>
+  </link>
+
+  <link name="front_left_wheel_steering_link">
+    <xacro:cuboid_inertia mass="1.0" x="0.1" y="0.1" z="0.1" />
+  </link>
+
+  <joint type="revolute" name="front_left_wheel_steering_joint">
+    <origin rpy="-1.56 0 0" xyz="0.25 0.175 0.06" />
+    <child link="front_left_wheel_steering_link" />
+    <parent link="link_chassis" />
+    <axis rpy="0 0 0" xyz="0 -1 0" />
+    <limit effort="100000" velocity="1000" upper="0.8727" lower="-0.8727" />
+  </joint>
+
+  <joint type="revolute" name="front_left_wheel_rotating_joint">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <child link="front_left_wheel" />
+    <parent link="front_left_wheel_steering_link" />
+    <axis rpy="0 0 0" xyz="0 0 1" />
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="100000" velocity="1000" />
+  </joint>
+
+  <!-- Front Right Wheel -->
+  <link name="front_right_wheel">
+
+    <!-- <inertial>
+      <mass value="11.0" />
+      <inertia ixx="0.58" ixy="0.0" iyy="0.33" ixz="0.0" iyz="0.0" izz="0.33" />
+    </inertial> -->
+
+    <xacro:inertial_cylinder mass="11.0" radius="0.06" length="0.07" />
+
+
+    <visual name="front_right_wheel_visual">
+      <geometry>
+        <cylinder radius="0.06" length="0.07" />
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <sphere radius="0.06" />
+      </geometry>
+      <friction>
+        <ode>
+          <mu>1.1</mu>
+          <mu2>1.1</mu2>
+        </ode>
+      </friction>
+    </collision>
+  </link>
+
+  <link name="front_right_wheel_steering_link">
+    <!-- <inertial>
+      <mass value="1.0" />
+      <inertia ixx="0.58" ixy="0.0" iyy="0.33" ixz="0.0" iyz="0.0" izz="0.33" />
+    </inertial> -->
+    <xacro:cuboid_inertia mass="1.0" x="0.1" y="0.1" z="0.1" />
+
+  </link>
+
+  <joint type="revolute" name="front_right_wheel_steering_joint">
+    <origin rpy="-1.56 0 0" xyz="0.25 -0.175 0.06" />
+    <child link="front_right_wheel_steering_link" />
+    <parent link="link_chassis" />
+    <axis rpy="0 0 0" xyz="0 -1 0" />
+    <limit effort="100000" velocity="1000" upper="0.8727" lower="-0.8727" />
+  </joint>
+
+  <joint type="revolute" name="front_right_wheel_rotating_joint">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <child link="front_right_wheel" />
+    <parent link="front_right_wheel_steering_link" />
+    <axis rpy="0 0 0" xyz="0 0 1" />
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="100000" velocity="1000" />
+    <joint_properties damping="1.0" friction="1.0" />
+  </joint>
+
+  <xacro:oakd model="pro" parent_link="link_chassis">
+    <origin xyz="${oakd_pro_x_offset} ${oakd_pro_y_offset} ${oakd_pro_z_offset}" />
+  </xacro:oakd>
+
+</robot>

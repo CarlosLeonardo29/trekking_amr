@@ -1,0 +1,10 @@
+teleop_twist_joy_node:
+  ros__parameters:
+    axis_linear: 1          # eixo 1 = analógico esquerdo (cima/baixo)
+    scale_linear: 1.0
+    axis_angular: 0         # eixo 0 = analógico esquerdo (esquerda/direita)
+    scale_angular: 1.0
+    enable_button: 4        # botão 4 = L1 (precisa segurar p/ habilitar)
+    enable_turbo_button: 5  # botão 5 = R1 (modo turbo opcional)
+    scale_linear_turbo: 2.0
+    scale_angular_turbo: 2.0

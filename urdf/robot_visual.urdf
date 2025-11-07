@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual name="chassis_visual">
+      <origin rpy="0 0 0" xyz="0.033 0.025 -0.04"/>
+      <geometry>
+        <mesh filename="package://trekking_amr/meshes/Chassi_RC.obj"
+              scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>
