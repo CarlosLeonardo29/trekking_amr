@@ -18,13 +18,16 @@ print(pca.reference_clock_speed)
 pca.frequency = 100
 time.sleep(0.1)
 
-def cmdvel_to_pwm(v, w, v_max=1.0, w_max=1.0):
+def cmdvel_to_pwm(v, w, v_max=1.0, w_max=1.0, v_deadband=0.0):
     """
     Converte linear.x (v) e angular.z (w) em duty cycle para motor e servo.
     """
     # --- Motor ---
-    pwm_motor = 0.15 + (v / v_max) * 0.05
-    pwm_motor = max(0.146, min(0.15505, pwm_motor))  # limita
+    if abs(v) < v_deadband:
+        v = 0.0
+    # pwm_motor = 0.15 + (v / v_max) * 0.05
+    pwm_motor = 0.15 + (v / v_max) * 10
+    pwm_motor = max(0.15, min(0.15505, pwm_motor))  # limita
 
     # --- Servo ---
     pwm_servo = 0.16 + (w / w_max) * 0.05
