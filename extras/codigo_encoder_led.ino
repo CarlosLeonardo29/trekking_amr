@@ -29,6 +29,12 @@ void setup() {
   lastStableState = lastReading = digitalRead(ENC_PIN);
 
   Wire.begin(SDA_PIN, SCL_PIN);
+
+   if (!apds.init()) {
+    while (1) {}
+  }
+
+  apds.enableLightSensor(false);   // habilita RGBC
 }
 
 void loop() {

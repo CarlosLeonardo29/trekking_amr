@@ -30,6 +30,7 @@ setup(
         "console_scripts": [
             'bno085_node = sensors.bno085_node:main',
             'odom_node = sensors.odom_node:main',
+            'odom_path_node = sensors.odom_path_node:main',
         ],
     },
 )
