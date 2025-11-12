@@ -31,6 +31,7 @@ setup(
             'bno085_node = sensors.bno085_node:main',
             'odom_node = sensors.odom_node:main',
             'odom_path_node = sensors.odom_path_node:main',
+            'nav_plan_node = sensors.nav_plan_node:main',
         ],
     },
 )

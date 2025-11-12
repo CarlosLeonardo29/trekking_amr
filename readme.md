@@ -118,6 +118,16 @@ Para ativar o modo de navegação autônoma do robô (NAV2).
 ros2 launch trekking_amr navigation_launch.py use_sim_time:=false
 ```
 
+Para salvar a rota gerada pela NAV2. 
+```bash
+ros2 run trekking_amr nav_plan_node
+```
+
+Para salvar a rota realizada pelo robô.
+```bash
+ros2 run trekking_amr odom_path_node
+```
+
 ---
 ## ⚙️ Dependências
 
