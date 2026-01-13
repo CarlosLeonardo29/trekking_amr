@@ -22,7 +22,7 @@ setup(
     install_requires=["setuptools"],
     zip_safe=True,
     maintainer="nuke",
-    maintainer_email="unoesc.westbots@gmail.com",
+    maintainer_email="carlos.leonardo290403@gmail.com",
     description="Autonomous robot integration in ROS 2",
     license="TODO: License declaration",
     tests_require=["pytest"],

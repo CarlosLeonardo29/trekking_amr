@@ -4,7 +4,7 @@
   <name>trekking_amr</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="unoesc.westbots@gmail.com">nuke</maintainer>
+  <maintainer email="carlos.leonardo290403@gmail.com">nuke</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>

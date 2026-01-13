@@ -40,13 +40,6 @@ def generate_launch_description():
             )
         ),
 
-        # Controle manual
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(trekking_dir, 'launch', 'teleop.launch.py')
-            )
-        ),
-
         # RViz
         Node(
             package='rviz2',

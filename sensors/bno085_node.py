@@ -27,7 +27,7 @@ class BNO085Node(Node):
             self.bno = BNO08X_I2C(i2c)
             self.bno.enable_feature(BNO_REPORT_ACCELEROMETER)
             self.bno.enable_feature(BNO_REPORT_GYROSCOPE)
-            self.bno.enable_feature(BNO_REPORT_GAME_ROTATION_VECTOR)
+            self.bno.enable_feature(BNO_REPORT_GAME_ROTATION_VECTOR) # Evita erro na calibração do Magnetômetro
             self.get_logger().info('BNO085 inicializado com sucesso.')
         except Exception as e:
             self.get_logger().error(f'Erro ao inicializar o BNO085: {e}')
