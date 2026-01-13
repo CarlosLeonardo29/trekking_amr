@@ -1,5 +1,5 @@
 <h1 align="center">TREKKING 2025 🚗</h1>
-<p align="center">Projeto real de um veículo autônomo com ROS 2 Humble.</p>
+<p align="center">Projeto real de um veículo autônomo para ambientes estáticos com ROS 2 Humble.</p>
 
 <p align="center">
   <a href="https://docs.ros.org/en/humble/index.html">
@@ -27,7 +27,12 @@ Todos os direitos estão reservados.
 
 ## Contato
 
-Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.leonardo290403@gmail.com].
+#### ✍️⚡ Autor e Responsável pelo Projeto - **Eng. Eletricista Carlos Leonardo Lazzari**
+
+#### 🎓 Professor Orientador - **Dr. Eng. Eletricista Kleyton Hoffmann**
+
+Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.leonardo290403@gmail.com](mailto:carlos.leonardo290403@gmail.com) ou [kleyton.hoffmann@unoesc.edu.br](mailto:kleyton.hoffmann@unoesc.edu.br).
+
 
 ## Projeto Desenvolvido
 
@@ -85,10 +90,6 @@ A Figura **3** apresenta o diagrama de blocos da arquitetura de hardware do prot
 </p>
 
 ---
-
-### ✍️⚡ Autor e Responsável pelo Projeto - **Eng. Eletricista Carlos Leonardo Lazzari**
-
-### 🎓 Professor Orientador - **Dr. Eng. Eletricista Kleyton Hoffmann**
 
 ## Conteúdo
 - [🎈 Introdução](#-introdução)
