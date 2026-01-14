@@ -1,4 +1,4 @@
-<h1 align="center">TREKKING 2025 🚗</h1>
+<h1 align="center">Veículo Autônomo - Categoria TREKKING 🏎️</h1>
 <p align="center">Projeto real de um veículo autônomo para ambientes estáticos com ROS 2 Humble.</p>
 
 <p align="center">
@@ -20,8 +20,7 @@
 
 > **Aviso de Direitos Autorais**
 
-Este repositório e seu conteúdo são protegidos por direitos autorais © 2025 Carlos Leonardo Lazzari.  
-Todos os direitos estão reservados.
+Este repositório e seu conteúdo são protegidos por direitos autorais © 2025 Carlos Leonardo Lazzari. Todos os direitos estão reservados.
 
 **É proibida** a cópia, modificação, redistribuição ou uso de qualquer parte deste projeto, para qualquer finalidade, sem permissão expressa e por escrito do autor.
 
@@ -33,10 +32,25 @@ Todos os direitos estão reservados.
 
 Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.leonardo290403@gmail.com](mailto:carlos.leonardo290403@gmail.com) ou [kleyton.hoffmann@unoesc.edu.br](mailto:kleyton.hoffmann@unoesc.edu.br).
 
+## Conteúdo
+- [🎈 Introdução](#-introdução)
+- [🚀 Inicialização do Sistema](#-inicialização-do-sistema)
+- [⚙️ Dependências](#-dependências)
+- [🖥️ Arquitetura do Sistema](#-arquitetura-do-sistema)
+  - [📦 Arquitetura de Hardware](#-arquitetura-de-hardware)
+  - [💻 Arquitetura de Software](#-arquitetura-de-software)
+- [🧪 Compilação e Build](#-compilação-e-build)
+- [📊 Resultados Obtidos](#-resultados-obtidos)
+- [📚 Tutoriais](#-tutoriais)
+- [🔗 Referências](#-referências)
 
-## Projeto Desenvolvido
+---
 
-Este projeto foi desenvolvido pelo estudante Carlos Leonardo Lazzari e orientado pelo professor Kleyton Hoffmann como TCC do curso de Engenharia Elétrica, em conjunto com a equipe *WEST BOTS* da UNOESC, campus de Joaçaba/SC, Brasil (2025).  
+## 🎈 Introdução
+
+### Informações do Projeto
+
+Este projeto foi desenvolvido pelo estudantes Carlos Leonardo Lazzari e Murilo Ribeiro Bonato, orientados pelo professor Kleyton Hoffmann como TCC do curso de Engenharia Elétrica, em conjunto com a equipe *WEST BOTS* da UNOESC, campus de Joaçaba/SC, Brasil (2025).  
 Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, por meio do Edital nº 51/2024, e pela UNOESC.
 
 > ℹ️ **Nota:** O desenvolvimento deste projeto foi baseado na simulação publicada em: <https://github.com/CarlosLeonardo29/trekking_sim>.
@@ -63,44 +77,21 @@ Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, po
 
 ---
 
-### Imagens do Veículo Autônomo Desenvolvido
+### Veículo Autônomo Desenvolvido
 
 <p align="center">
-  <img src="images/IMAGEM CARRO COMPETIÇÃO.jpg" alt="Carrinho em Competição" width="33.5%"/>
+  <img src="images/carro_competicao.jpg" alt="Carrinho em Competição" width="33.5%"/>
   &nbsp;&nbsp;
-  <img src="images/CARRO REAL.jpg" alt="Protótipo Final do Carrinho" width="44.5%"/>
+  <img src="images/carro_lateral.jpg" alt="Protótipo Final do Carrinho" width="44.5%"/>
 </p>
 
 <p align="center">
-  <em>Figura 2 — Veículo autônomo desenvolvido pela equipe WEST BOTS durante competição e em sua configuração final.</em>
+  <em>Figura 2 — Configuração final do veículo autônomo desenvolvido pela equipe WEST BOTS.</em>
 </p>
 
 ---
 
-### Arquitetura de Hardware do Sistema
-
-A Figura **3** apresenta o diagrama de blocos da arquitetura de hardware do protótipo desenvolvido.
-
-<p align="center">
-  <img src="images/Arquitetura.png" alt="Diagrama de blocos da arquitetura de hardware do sistema" width="75%"/>
-</p>
-
-<p align="center">
-  <em>Figura 3 — Diagrama de blocos da arquitetura de hardware do sistema.</em>
-</p>
-
----
-
-## Conteúdo
-- [🎈 Introdução](#-introdução)
-- [⚙️ Dependências](#-dependências)
-- [🧪 Compilação e Build](#-compilação-e-build)
-- [📊 Resultados Obtidos](#-resultados-obtidos)
-- [📚 Tutoriais](#-tutoriais)
-- [🔗 Referências](#-referências)
-
----
-## 🎈 Introdução
+## 🚀 Inicialização do Sistema
 
 Clone o projeto dentro de um workspace ROS 2 baseado em `colcon`.  
 Para criar um workspace, siga [este tutorial oficial](https://docs.ros.org/en/humble/Tutorials/Workspace/Creating-A-Workspace.html).
@@ -229,6 +220,57 @@ export CYCLONEDDS_URI=file:///home/westbots/dev_ws/src/trekking_amr/config/dds_c
 ```
 
 ---
+
+## 🖥️ Arquitetura do Sistema
+
+### Arquitetura de Hardware
+
+A Figura **3** apresenta o diagrama de blocos da arquitetura de hardware do protótipo desenvolvido.
+
+<p align="center">
+  <img src="images/Arquitetura.png" alt="Diagrama de blocos da arquitetura de hardware do sistema" width="75%"/>
+</p>
+
+<p align="center">
+  <em>Figura 3 — Diagrama de blocos da arquitetura de hardware do sistema.</em>
+</p>
+
+A Figura **4** apresenta o projeto da PCB para extensão dos pinos da NVIDIA Jetson Orin Nano.
+
+<p align="center">
+  <img src="images/placa_extensao.png" alt="Placa de extensão do protótipo" width="50%"/>
+</p>
+
+<p align="center">
+  <em>Figura 4 — Placa de extensão para NVIDIA Jetson Orin Nano.</em>
+</p>
+
+---
+
+### Arquitetura de Software
+
+A Figura **5** e **6** apresentam os fluxogramas de funcionamento do protótipo desenvolvido.
+
+<p align="center">
+  <img src="images/Fluxograma Selecionar Modo.png" alt="Fluxograma Selecionar Modo" width="40%" />
+  <img src="images/Fluxograma Modo Manual.png" alt="Fluxograma Modo Manual" width="27.85%" />
+</p>
+
+<p align="center">
+  <em>Figura 5 — Fluxogramas de seleção de modo e modo manual do protótipo.</em>
+</p>
+
+<p align="center">
+  <img src="images/Fluxograma Modo Autônomo.png" alt="Fluxograma Modo Autônomo" width="69%" />
+</p>
+
+<p align="center">
+  <em>Figura 6 — Fluxograma do modo autônomo do protótipo.</em>
+</p>
+
+---
+
+
 ## 🧪 Compilação e Build
 
 > ⚠️ Atenção: todos os diretórios devem estar listados no arquivo `setup.py` para que o build funcione.
@@ -258,29 +300,30 @@ entry_points={
 ---
 ## 📊 Resultados Obtidos
 
-A Figura **1** apresenta o mapa do ambiente construído utilizando a ferramenta **SLAM Toolbox** no modo manual de controle. No mapa estão representados os obstáculos, paredes, áreas navegáveis — como corredores e laboratórios — e áreas não navegáveis, incluindo rampas, trechos sem piso e salas inacessíveis durante a execução dos testes.
+A Figura **7** apresenta o mapa do ambiente construído utilizando a ferramenta **SLAM Toolbox** no modo manual de controle. No mapa estão representados os obstáculos, paredes, áreas navegáveis — como corredores e laboratórios — e áreas não navegáveis, incluindo rampas, trechos sem piso e salas inacessíveis durante a execução dos testes.
 
 <p align="center">
   <img src="images/mapa_trekking.png" alt="Mapa do ambiente gerado com SLAM Toolbox" width="50%"/>
 </p>
 
 <p align="center">
-  <em>Figura 1 — Mapa do ambiente gerado com a ferramenta SLAM Toolbox.</em>
+  <em>Figura 7 — Mapa do ambiente gerado com a ferramenta SLAM Toolbox.</em>
 </p>
 
 ---
 
-A Figura **2** apresenta a trajetória efetivamente percorrida pelo robô no modo autônomo, registrada a partir dos dados de odometria acumulados e da estimativa de pose, considerando um ambiente previamente delimitado para os testes experimentais.
+A Figura **8** apresenta a trajetória efetivamente percorrida pelo robô no modo autônomo, registrada a partir dos dados de odometria acumulados e da estimativa de pose, considerando um ambiente previamente delimitado para os testes experimentais.
 
 <p align="center">
-  <img src="images/Rota Realizada no Ambiente.png" alt="Rota realizada pelo robô no modo autônomo" width="50%"/>
+  <img src="images/rota_realizada.png" alt="Rota realizada pelo robô no modo autônomo" width="50%"/>
 </p>
 
 <p align="center">
-  <em>Figura 2 — Rota realizada pelo robô no modo autônomo durante os testes.</em>
+  <em>Figura 8 — Rota realizada pelo robô no modo autônomo durante os testes.</em>
 </p>
 
 ---
+
 ## 📚 Tutoriais
 
 Para executar este projeto, é necessário ter o **ROS 2 Humble** e o **Gazebo Sim** instalados no seu sistema.
@@ -289,6 +332,7 @@ Para executar este projeto, é necessário ter o **ROS 2 Humble** e o **Gazebo S
 - [Instalar o Gazebo Sim (integração com ROS)](https://gazebosim.org/docs/latest/ros_installation/)
 
 ---
+
 ## 🔗 Referências
 
 - [ROS 2 Documentation](https://docs.ros.org/en/humble/)
