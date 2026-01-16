@@ -1,5 +1,5 @@
 <h1 align="center">Veículo Autônomo - Categoria TREKKING 🏎️</h1>
-<p align="center">Projeto real de um veículo autônomo para ambientes estáticos com ROS 2 Humble.</p>
+<p align="center">Projeto real de um veículo autônomo para ambientes estáticos com ROS 2.</p>
 
 <p align="center">
   <a href="https://docs.ros.org/en/humble/index.html">
@@ -35,8 +35,8 @@ Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.le
 ## Conteúdo
 - [🎈 Introdução](#-introdução)
 - [🚀 Inicialização do Sistema](#-inicialização-do-sistema)
-- [⚙️ Dependências](#-dependências)
-- [🖥️ Arquitetura do Sistema](#-arquitetura-do-sistema)
+- [⚙️ Dependências](#️-dependências)
+- [🖥️ Arquitetura do Sistema](#️-arquitetura-do-sistema)
   - [📦 Arquitetura de Hardware](#-arquitetura-de-hardware)
   - [💻 Arquitetura de Software](#-arquitetura-de-software)
 - [🧪 Compilação e Build](#-compilação-e-build)
@@ -50,8 +50,7 @@ Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.le
 
 ### Informações do Projeto
 
-Este projeto foi desenvolvido pelo estudantes Carlos Leonardo Lazzari e Murilo Ribeiro Bonato, orientados pelo professor Kleyton Hoffmann como TCC do curso de Engenharia Elétrica, em conjunto com a equipe *WEST BOTS* da UNOESC, campus de Joaçaba/SC, Brasil (2025).  
-Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, por meio do Edital nº 51/2024, e pela UNOESC.
+Este projeto foi desenvolvido pelo estudantes Carlos Leonardo Lazzari e Murilo Ribeiro Bonato, orientados pelo professor Kleyton Hoffmann como TCC do curso de Engenharia Elétrica, em conjunto com a equipe *WEST BOTS* da UNOESC, campus de Joaçaba/SC, Brasil (2025). Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, por meio do Edital nº 51/2024, e pela UNOESC.
 
 > ℹ️ **Nota:** O desenvolvimento deste projeto foi baseado na simulação publicada em: <https://github.com/CarlosLeonardo29/trekking_sim>.
 
@@ -187,6 +186,7 @@ ros2 run trekking_amr odom_path_node
 ```
 
 ---
+
 ## ⚙️ Dependências
 
 Dependências necessárias para o pacote no ROS 2. 
@@ -210,9 +210,11 @@ Para configurar o ambiente de desenvolvimento, adicione as seguintes linhas ao a
 source /opt/ros/humble/setup.bash
 source ~/dev_ws/install/setup.bash
 export ROS_DOMAIN_ID=0
+export ROS_LOCALHOST_ONLY=1
+export LIBGL_ALWAYS_SOFTWARE=0 
 ```
 
-#### Configuração do CYCLONEDDS.
+### Configuração do CYCLONEDDS.
 
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
@@ -223,7 +225,7 @@ export CYCLONEDDS_URI=file:///home/westbots/dev_ws/src/trekking_amr/config/dds_c
 
 ## 🖥️ Arquitetura do Sistema
 
-### Arquitetura de Hardware
+### 📦 Arquitetura de Hardware
 
 A Figura **3** apresenta o diagrama de blocos da arquitetura de hardware do protótipo desenvolvido.
 
@@ -247,7 +249,7 @@ A Figura **4** apresenta o projeto da PCB para extensão dos pinos da NVIDIA Jet
 
 ---
 
-### Arquitetura de Software
+### 💻 Arquitetura de Software
 
 A Figura **5** e **6** apresentam os fluxogramas de funcionamento do protótipo desenvolvido.
 
