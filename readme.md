@@ -20,9 +20,9 @@
 
 > **Aviso de Direitos Autorais**
 
-Este repositório e seu conteúdo são protegidos por direitos autorais © 2025 Carlos Leonardo Lazzari. Todos os direitos estão reservados.
+Copyright © 2025 Carlos Leonardo Lazzari.
 
-**É proibida** a cópia, modificação, redistribuição ou uso de qualquer parte deste projeto, para qualquer finalidade, sem permissão expressa e por escrito do autor.
+Este repositório pode ser utilizado, copiado, modificado e redistribuído de acordo com os termos da **Apache License 2.0**. Esta licença não concede direitos sobre marcas, nomes ou logotipos do projeto, da equipe WEST BOTS ou da UNOESC, e o software é fornecido sem garantias de qualquer natureza. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ## Contato
 
