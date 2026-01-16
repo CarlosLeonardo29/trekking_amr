@@ -5,8 +5,8 @@
   <a href="https://docs.ros.org/en/humble/index.html">
     <img src="https://img.shields.io/badge/ROS%202-Humble-informational?style=for-the-badge" alt="ROS 2 Humble"/>
   </a>
-  <a href="https://gazebosim.org/">
-    <img src="https://img.shields.io/badge/Gazebo-Fortress-important?style=for-the-badge" alt="Gazebo Fortress"/>
+  <a href="https://releases.ubuntu.com/22.04/">
+    <img src="https://img.shields.io/badge/Ubuntu-22.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu 22.04"/>
   </a>
   <a href="https://docs.nav2.org/">
   <img src="https://img.shields.io/badge/ROS%202-NAV2-brightgreen?style=for-the-badge" alt="ROS 2 NAV2"/>
@@ -227,7 +227,7 @@ export LIBGL_ALWAYS_SOFTWARE=0
 
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export CYCLONEDDS_URI=file:///home/westbots/dev_ws/src/trekking_amr/config/dds_configuration.xml
+export CYCLONEDDS_URI=file:///home/carloslazzari/dev_ws/src/trekking_amr/config/dds_configuration.xml
 ```
 
 ---
@@ -288,6 +288,8 @@ A Figura **4** apresenta o projeto da PCB para extensão dos pinos da NVIDIA Jet
 
 ### 💻 Arquitetura de Software
 
+#### 🛠️ Fluxograma de Funcionamento
+
 A Figura **5** e **6** apresentam os fluxogramas de funcionamento do protótipo desenvolvido.
 
 <p align="center">
@@ -306,6 +308,15 @@ A Figura **5** e **6** apresentam os fluxogramas de funcionamento do protótipo 
 <p align="center">
   <em>Figura 6 — Fluxograma do modo autônomo do protótipo.</em>
 </p>
+
+---
+
+#### 🛠️ Árvore de Transformadas (TF Tree)
+
+A TF Tree apresenta a hierarquia de frames do robô, indicando como cada referência de posição e orientação (*pose*) está conectada ao sistema de coordenadas. A seguir, é possível visualizar a árvore de transformadas do projeto desenvolvido.
+
+![TF Tree](images/tf_tree.jpg)  
+[Visualizar TF Tree (PDF)](images/tf_tree.pdf)
 
 ---
 
