@@ -1,5 +1,5 @@
 <h1 align="center">Veículo Autônomo - Categoria TREKKING 🏎️</h1>
-<p align="center">Projeto real de um veículo autônomo para ambientes estáticos com ROS 2.</p>
+<p align="center">Projeto real de um veículo autônomo em escala 1/10 para mapeamento e navegação em ambientes estáticos com ROS 2.</p>
 
 <p align="center">
   <a href="https://docs.ros.org/en/humble/index.html">
@@ -26,20 +26,27 @@ Este repositório e seu conteúdo são protegidos por direitos autorais © 2025 
 
 ## Contato
 
-#### ✍️⚡ Autor e Responsável pelo Projeto - **Eng. Eletricista Carlos Leonardo Lazzari**
+### ⚡ Autor e Responsável pelo Projeto - **Eng. Eletricista Carlos Leonardo Lazzari** 
 
-#### 🎓 Professor Orientador - **Dr. Eng. Eletricista Kleyton Hoffmann**
+<p align="left">
+  <a href="https://www.linkedin.com/in/carlos-leonardo29/">
+    <img src="https://img.shields.io/badge/LinkedIn-Carlos_Leonardo-blue?logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="http://lattes.cnpq.br/1607061869218351">
+    <img src="https://img.shields.io/badge/Currículo-Lattes-green"/>
+  </a>
+</p>
 
-Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.leonardo290403@gmail.com](mailto:carlos.leonardo290403@gmail.com) ou [kleyton.hoffmann@unoesc.edu.br](mailto:kleyton.hoffmann@unoesc.edu.br).
+> ℹ️ **Para solicitações de uso ou dúvidas:** Entre em contato pelo e-mail: [carlos.leonardo290403@gmail.com](mailto:carlos.leonardo290403@gmail.com) ou [kleyton.hoffmann@unoesc.edu.br](mailto:kleyton.hoffmann@unoesc.edu.br).
 
 ## Conteúdo
 - [🎈 Introdução](#-introdução)
 - [🚀 Inicialização do Sistema](#-inicialização-do-sistema)
 - [⚙️ Dependências](#️-dependências)
+- [🧪 Compilação e Build](#-compilação-e-build)
 - [🖥️ Arquitetura do Sistema](#️-arquitetura-do-sistema)
   - [📦 Arquitetura de Hardware](#-arquitetura-de-hardware)
   - [💻 Arquitetura de Software](#-arquitetura-de-software)
-- [🧪 Compilação e Build](#-compilação-e-build)
 - [📊 Resultados Obtidos](#-resultados-obtidos)
 - [📚 Tutoriais](#-tutoriais)
 - [🔗 Referências](#-referências)
@@ -50,9 +57,11 @@ Para solicitações de uso ou dúvidas, entre em contato pelo e-mail: [carlos.le
 
 ### Informações do Projeto
 
-Este projeto foi desenvolvido pelo estudantes Carlos Leonardo Lazzari e Murilo Ribeiro Bonato, orientados pelo professor Kleyton Hoffmann como TCC do curso de Engenharia Elétrica, em conjunto com a equipe *WEST BOTS* da UNOESC, campus de Joaçaba/SC, Brasil (2025). Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, por meio do Edital nº 51/2024, e pela UNOESC.
+Este projeto foi desenvolvido pelos acadêmicos de Engenharia Elétrica Carlos Leonardo Lazzari e Murilo Ribeiro Bonato, atualmente engenheiros eletricistas, sob a orientação do Prof. Dr. Eng. Eletricista Kleyton Hoffmann, como Trabalho de Conclusão de Curso do curso de Engenharia Elétrica, em conjunto com a equipe WEST BOTS da UNOESC, campus de Joaçaba/SC, Brasil (2025). Todos os equipamentos e componentes utilizados foram financiados pela FAPESC, por meio do Edital nº 51/2024, e pela UNOESC.
 
-> ℹ️ **Nota:** O desenvolvimento deste projeto foi baseado na simulação publicada em: <https://github.com/CarlosLeonardo29/trekking_sim>.
+> ℹ️ **Título do TCC:** *Desenvolvimento de um Veículo Autônomo com ROS para Mapeamento e Navegação em Ambientes Estáticos.*
+
+> ℹ️ **Nota:** O desenvolvimento deste projeto foi baseado na simulação disponível em: <https://github.com/CarlosLeonardo29/trekking_sim>.
 
 ---
 
@@ -223,6 +232,34 @@ export CYCLONEDDS_URI=file:///home/westbots/dev_ws/src/trekking_amr/config/dds_c
 
 ---
 
+## 🧪 Compilação e Build
+
+> ⚠️ Atenção: todos os diretórios devem estar listados no arquivo `setup.py` para que o build funcione.
+
+```bash
+(os.path.join("share", package_name, "launch"), glob("launch/*")),
+(os.path.join("share", package_name, "rviz"), glob("rviz/*")),
+(os.path.join("share", package_name, "config"), glob("config/*")),
+(os.path.join("share", package_name, "scripts"), glob("scripts/*")),
+(os.path.join("share", package_name, "sensors"), glob("sensors/*")),
+(os.path.join("share", package_name, "meshes"), glob("meshes/*")),
+(os.path.join("share", package_name, "urdf"), glob("urdf/*")),
+```
+
+```bash
+entry_points={
+    "console_scripts": [
+        'bno085_node = sensors.bno085_node:main',
+        'odom_node = sensors.odom_node:main',
+        'odom_path_node = sensors.odom_path_node:main',
+        'nav_plan_node = sensors.nav_plan_node:main',
+    ],
+```
+
+**IMPORTANTE**: Se você fizer qualquer alteração nos arquivos deste projeto, é necessário executar novamente os comandos de build e source!
+
+---
+
 ## 🖥️ Arquitetura do Sistema
 
 ### 📦 Arquitetura de Hardware
@@ -272,34 +309,6 @@ A Figura **5** e **6** apresentam os fluxogramas de funcionamento do protótipo 
 
 ---
 
-
-## 🧪 Compilação e Build
-
-> ⚠️ Atenção: todos os diretórios devem estar listados no arquivo `setup.py` para que o build funcione.
-
-```bash
-(os.path.join("share", package_name, "launch"), glob("launch/*")),
-(os.path.join("share", package_name, "rviz"), glob("rviz/*")),
-(os.path.join("share", package_name, "config"), glob("config/*")),
-(os.path.join("share", package_name, "scripts"), glob("scripts/*")),
-(os.path.join("share", package_name, "sensors"), glob("sensors/*")),
-(os.path.join("share", package_name, "meshes"), glob("meshes/*")),
-(os.path.join("share", package_name, "urdf"), glob("urdf/*")),
-```
-
-```bash
-entry_points={
-    "console_scripts": [
-        'bno085_node = sensors.bno085_node:main',
-        'odom_node = sensors.odom_node:main',
-        'odom_path_node = sensors.odom_path_node:main',
-        'nav_plan_node = sensors.nav_plan_node:main',
-    ],
-```
-
-**IMPORTANTE**: Se você fizer qualquer alteração nos arquivos deste projeto, é necessário executar novamente os comandos de build e source!
-
----
 ## 📊 Resultados Obtidos
 
 A Figura **7** apresenta o mapa do ambiente construído utilizando a ferramenta **SLAM Toolbox** no modo manual de controle. No mapa estão representados os obstáculos, paredes, áreas navegáveis — como corredores e laboratórios — e áreas não navegáveis, incluindo rampas, trechos sem piso e salas inacessíveis durante a execução dos testes.
