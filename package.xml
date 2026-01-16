@@ -3,9 +3,9 @@
 <package format="3">
   <name>trekking_amr</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Desenvolvimento de um Veículo Autônomo com ROS para mapeamento e navegação em ambientes estáticos utilizando algoritmos SLAM, A* Híbrido e controlador MPPI.</description>
   <maintainer email="carlos.leonardo290403@gmail.com">nuke</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <depend>rclpy</depend>
   <depend>urdf</depend>
