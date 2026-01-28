@@ -133,7 +133,7 @@ ros2 run trekking_amr bno085_node
 ros2 run trekking_amr odom_node
 ```
 
-Para rodar o drive do LiDAR SICK PICOSCAN150. 
+Para rodar o driver do LiDAR SICK PICOSCAN150. 
 ```bash
 ros2 launch sick_scan_xd sick_picoscan.launch.py
 ```
