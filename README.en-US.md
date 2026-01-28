@@ -391,7 +391,7 @@ If this project or repository is used in academic or technical work, the followi
 
 **Reference (ABNT):**
 
-LAZZARI, Carlos Leonardo; BONATO, Murilo Ribeiro. **Desenvolvimento de um Veículo Autônomo com ROS para Mapeamento e Navegação em Ambientes Estáticos.** Advisor: Prof. Dr. Kleyton Hoffmann. Bachelor's Thesis (Electrical Engineering) – University of the West of Santa Catarina, Joaçaba, 2025.
+LAZZARI, Carlos Leonardo; BONATO, Murilo Ribeiro. **Desenvolvimento de um Veículo Autônomo com ROS para Mapeamento e Navegação em Ambientes Estáticos.** Orientador: Prof. Dr. Kleyton Hoffmann. Trabalho de Conclusão de Curso (Bacharelado em Engenharia Elétrica) – Universidade do Oeste de Santa Catarina, Joaçaba, 2025.
 
 **BibTeX:**
 
