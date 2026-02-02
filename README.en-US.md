@@ -210,7 +210,7 @@ ros2 run trekking_amr odom_path_node
 Dependencies required for the package in ROS 2.
 
 ```bash
-sudo apt install ros-humble-ros-gz-sim ros-humble-joy ros-humble-teleop-twist-joy ros-humble-robot-localization ros-humble-slam-toolbox ros-humble-ros-gz-bridge ros-humble-nav2-bringup ros-humble-navigation2 ros-humble-xacro ros-humble-joint-state-publisher* ros-humble-rqt* ros-humble-sick-scan-xd 
+sudo apt install ros-humble-ros-gz-sim ros-humble-joy ros-humble-teleop-twist-joy ros-humble-robot-localization ros-humble-slam-toolbox ros-humble-ros-gz-bridge ros-humble-nav2-bringup ros-humble-navigation2 ros-humble-xacro ros-humble-joint-state-publisher* ros-humble-rqt* ros-humble-sick-scan-xd ros-humble-rmw-cyclonedds-cpp
 ```
 
 Other dependencies required for the package.
